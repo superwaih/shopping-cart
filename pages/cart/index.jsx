@@ -30,7 +30,7 @@ const Cart = () => {
         <ul >
          {cart.map((prod) => {
           return(
-            <div className='border w-full flex p-4 justify-between'>
+            <div key={prod.id} className='border w-full flex p-4 justify-between'>
               <img className='h-20 w-20 rounded-full' src={prod.image} alt="" />
               <p>{prod.name}</p>
               <p>${prod.price}</p>

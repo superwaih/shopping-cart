@@ -16,6 +16,7 @@ const SingleProduct = ({ prod }) => {
         {cart.some(c => c.id === prod.id) ?
 
         (<button
+        key={prod.id}
             onClick={() => dispatch({
                 type: "REMOVE_FROM_CART",
                 payload: prod
@@ -23,7 +24,9 @@ const SingleProduct = ({ prod }) => {
             className='px-4 w-full text-white  py-3 bg-red-700 font-bold rounded-md'>Remove from cart</button>)
 
 
-                :   (<button disabled={!prod.inStock}
+                :   (<button
+                    key={prod.id}
+                    disabled={!prod.inStock}
                     onClick={() => dispatch({
                         type: "ADD_TO_CART",
                         payload: {
